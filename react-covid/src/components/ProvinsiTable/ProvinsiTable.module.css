@@ -1,0 +1,79 @@
+.provinsi {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.provinsi__title {
+   font-size: 3rem;
+   margin-top: 3rem;
+   color: #06D6A0;
+}
+
+.provinsi__description {
+   color: #118AB2;
+   letter-spacing: 1px;
+}
+
+
+.table__provinsi {
+   max-height: 200vh;
+}
+
+.table__provinsi, th, td {
+   text-align: center;
+   border: 1px solid rgb(163, 163, 163);
+   padding: 1rem 2rem;
+   border-collapse: collapse;
+   margin: 2rem 1rem 3rem;
+}
+
+.table__title {
+   background-color: #06D6A0;
+   color: white;
+   font-size: 1.2rem;
+}
+
+.table__data {
+   color: #64748B;
+}
+
+@media (max-width:768px) {
+   .table__provinsi, th, td {
+      text-align: center;
+      border: 1px solid rgb(163, 163, 163);
+      padding: 0.5rem 1rem;
+      border-collapse: collapse;
+      margin: 2rem 0 3rem 0;
+   }
+
+   .table__provinsi {
+      max-width: 200vh;
+   }
+
+   .table__title {
+      font-size: 1rem;
+   }
+}
+
+@media (max-width: 590px) {
+   .table__provinsi, th, td {
+      text-align: center;
+      border: 1px solid rgb(163, 163, 163);
+      padding: 0.25rem 0.5rem;
+      border-collapse: collapse;
+      margin: 2rem 1rem 3rem;
+   }
+
+   .table__provinsi {
+      display:block;
+      max-height: 50vh;
+      max-width: 100vh;
+      overflow: auto;
+      border: none;
+   }
+
+   .table__title {
+      font-size: 1rem;
+   }
+}
