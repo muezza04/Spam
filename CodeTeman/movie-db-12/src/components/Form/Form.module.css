@@ -1,0 +1,85 @@
+/* Small Screen */
+.container {
+  margin: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.form__left {
+  margin-bottom: 1rem;
+}
+
+.form__title {
+  color: #386FA4;
+  margin-bottom: 1rem;
+  font-size: 2.44rem;
+}
+
+.form__genre {
+  color: #b5179e;
+  margin-bottom: 1rem;
+  font-size: 1.59rem;
+}
+
+.form__description {
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.form__button {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #84D2F6;
+  color: #fff;
+  margin-top: 5px;
+}
+
+.form__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 25px;
+}
+
+.form__input {
+  width: 349px;
+  height: 38px;
+  border-radius: 8px;
+}
+
+/* Medium Screen */
+@media (min-width: 768px) {
+  /*
+   * Nothing TODO Here.
+   * We dont change style Form. 
+   */
+}
+
+/* Large Screen */
+@media (min-width: 992px) {
+  .container {
+    max-width: 1200px;
+    margin: 3rem auto;
+  }
+
+  .form {
+    margin: 0 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .form__left {
+    flex-basis: 60%;
+  }
+
+  .form__right {
+    flex-basis: 40%;
+  }
+} 
+
