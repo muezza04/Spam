@@ -1,0 +1,91 @@
+/* Small Screen */
+.container {
+  margin: 1rem;
+}
+
+.addmovie {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.addmovie__left {
+  margin-bottom: 5rem;
+}
+
+.addmovie__submit {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+}
+
+.addmovie__title {
+  color: #4361ee;
+  margin-bottom: 1rem;
+  font-size: 2.44rem;
+  text-align: left;
+  padding: 1rem;
+}
+
+.addmovie__label {
+  color: #f72585;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  text-align: left;
+  margin-bottom: 5%;
+}
+
+.input {
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: white;
+  color: #fff;
+  margin-bottom: 1rem;
+  width: 300pt;
+}
+
+.addmovie__input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.2rem 2rem;
+  border-radius: 5px;
+  color: black;
+}
+
+.movie__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 25px;
+}
+/* Medium Screen */
+@media (min-width: 768px) {
+  /*
+       * Nothing TODO Here.
+       * We dont change style Hero. 
+       */
+}
+
+/* Large Screen */
+@media (min-width: 992px) {
+  .container {
+    max-width: 1200px;
+    margin: 3rem auto;
+  }
+
+  .addmovie {
+    margin: 0 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .addmovie__left {
+    flex-basis: 40%;
+  }
+
+  .addmovie__right {
+    flex-basis: 40%;
+  }
+}
