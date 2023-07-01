@@ -1,8 +1,8 @@
-.container {
-    background-color: #06D6A0;
-}
+import styled from "styled-components";
 
-.navbar {
+const StyledNavbar = styled.div`
+    background-color: #06D6A0;
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,18 +11,18 @@
     color: white;
 }
 
-.navbar__brand {
+h1 {
     font-size: 2.5rem;
 }
 
-.navbar__list {
+ul {
     list-style: none;
     display: flex;
     flex-direction: row;
     margin-right: 2rem;
 }
 
-.navbar__item {
+a {
     font-size: 1rem;
     letter-spacing: 1px;
     margin-left: 3.5rem;
@@ -31,7 +31,7 @@
     transition: color 0.5s;
 }
 
-.navbar__item:hover {
+a:hover {
     color: rgb(41, 41, 41);
 }
 
@@ -92,23 +92,23 @@
 }
 
 @media (max-width: 768px) {
-    .navbar {
+    nav {
         margin: 0 1rem;
         height: 80px;
         justify-content: space-around;
     }
 
-    .navbar__item {
+    a {
         margin-left: 2rem;
     }
 }
 
 @media (max-width: 590px) {
-    .navbar__brand {
+    h1 {
         margin-left: 1rem;
     }
 
-    .navbar {
+    nav {
         justify-content: space-between;
     }
 
@@ -116,7 +116,7 @@
         display: flex;
     }
 
-    .navbar__list {
+    ul {
         display: none;
     }
 
@@ -136,7 +136,10 @@
         opacity: 0.9;
     }
 
-    .navbar__item {
+    a {
         font-size: 1rem;
     }
-}
+  }
+`;
+
+export default StyledNavbar;

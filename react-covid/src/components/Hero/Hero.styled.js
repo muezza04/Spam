@@ -1,11 +1,12 @@
-/* Small Screen */
-.container {
+import styled from "styled-components";
+
+const StyledHero = styled.div`
+  /* Small Screen */
   margin: 0;
   padding: 4rem 0;
   letter-spacing: 1px;
-}
 
-.hero {
+section {
   display: flex;
   flex-direction: column-reverse;
   text-align: center;
@@ -16,7 +17,7 @@
   margin-bottom: 1rem;
 }
 
-.hero__title {
+h2 {
   color: #06D6A0;
   font-size: 2.44rem;
 }
@@ -28,11 +29,11 @@
   font-size: 1rem;
 }
 
-.hero__description {
+.hero__desc {
   color: #64748B;
 }
 
-.hero__button {
+button {
   margin: 2rem 0;
   padding: 0.6rem 3rem;
   border: none;
@@ -45,11 +46,11 @@
   font-size: 1rem;
 }
 
-.hero__button:hover {
+button:hover {
   background-color: #00ffbb;
 }
 
-.hero__image {
+img {
   max-width: 70%;
   height: auto;
   margin-bottom: 2rem;
@@ -65,12 +66,10 @@
 
 /* Large Screen */
 @media (min-width: 992px) {
-  .container {
     max-width: 1200px;
     margin: 3rem auto;
-  }
 
-  .hero {
+  section {
     margin: 0 1rem;
     flex-direction: row;
     justify-content: space-around;
@@ -87,7 +86,10 @@
     flex-basis: 40%;
   }
 
-  .hero__image {
+  img {
     max-width: 90%;
   }
 }
+`;
+
+export default StyledHero;

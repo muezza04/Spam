@@ -1,4 +1,7 @@
-.container {
+import styled from "styled-components";
+
+const StyledGlobal = styled.div`
+  .container {
    background-color: #F8F9FA;
 }
 
@@ -74,4 +77,6 @@
       flex-basis: 80%;
    }
 }
- 
+`;
+
+export default StyledGlobal;

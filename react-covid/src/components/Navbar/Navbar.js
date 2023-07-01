@@ -1,33 +1,33 @@
 import { useState } from "react";
-import styles from "./Navbar.module.css";
+import StyledNavbar from "./Navbar.styled";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
 
     return (
-        <div className={styles.container}>
-            <nav className={styles.navbar}>
+        <StyledNavbar>
+            <nav>
                 <div>
-                    <h1 className={styles.navbar__brand}>Covid ID</h1>
+                    <h1>Covid ID</h1>
                 </div>
                 <div>
                     <ul className={`${styles.navbar__list} ${showMenu ? styles.show : ""}`}>
-                        <li className={styles.navbar__item}>
-                            <Link to="/">Global</Link>
+                        <li>
+                            <Link to="/" as="a">Global</Link>
                         </li>
-                        <li className={styles.navbar__item}>
-                            <Link to="/covid/indonesia">Indonesia</Link>
+                        <li>
+                            <Link to="/covid/indonesia" as="a">Indonesia</Link>
                         </li>
-                        <li className={styles.navbar__item}>
-                            <Link to="/covid/provinsi">Provinsi</Link>
+                        <li>
+                            <Link to="/covid/provinsi" as="a">Provinsi</Link>
                         </li>
-                        <li className={styles.navbar__item}>
-                            <Link to="/covid/about">About</Link>
+                        <li>
+                            <Link to="/covid/about" as="a">About</Link>
                         </li>
                     </ul>
 
-                    <div className={styles.menu__toggle}>
+                    <div className="menu__toggle">
                         <input 
                             type="checkbox" 
                             onClick={() => setShowMenu(!showMenu)}
@@ -38,7 +38,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-        </div>
+        </StyledNavbar>
     );
 };
 
