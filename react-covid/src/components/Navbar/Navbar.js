@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
@@ -12,10 +13,18 @@ const Navbar = () => {
                 </div>
                 <div>
                     <ul className={`${styles.navbar__list} ${showMenu ? styles.show : ""}`}>
-                        <li className={styles.navbar__item}>Global</li>
-                        <li className={styles.navbar__item}>Indonesi</li>
-                        <li className={styles.navbar__item}>Provinsi</li>
-                        <li className={styles.navbar__item}>About</li>
+                        <li className={styles.navbar__item}>
+                            <Link to="/">Global</Link>
+                        </li>
+                        <li className={styles.navbar__item}>
+                            <Link to="/covid/indonesia">Indonesia</Link>
+                        </li>
+                        <li className={styles.navbar__item}>
+                            <Link to="/covid/provinsi">Provinsi</Link>
+                        </li>
+                        <li className={styles.navbar__item}>
+                            <Link to="/covid/about">About</Link>
+                        </li>
                     </ul>
 
                     <div className={styles.menu__toggle}>
