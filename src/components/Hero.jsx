@@ -1,11 +1,14 @@
 import React from "react";
 import HeroPoster from "../../public/hero-poster.svg";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
-    <section className="hero w-100">
-      <div className="row row align-items-center" style={{marginTop: "100px"}}>
-        <div className="col" style={{opacity: ""}}>
+    <section className="hero">
+      <div className="row row align-items-center d-flex" style={{marginTop: "100px"}}>
+        <div className="col hero-img">
           <img src={HeroPoster} />
         </div>
         <div className="col d-flex align-items-center justify-content-center fw-bold">
@@ -18,7 +21,7 @@ const Hero = () => {
               <button
                 className="btn bg-white btn-sm fw-bold text-center dark-blue100 mt-2 rounded-pill "
                 style={{ fontSize: "16px", width: "240px", radius: "10px" }}
-                
+                onClick={() => navigate("/kelas-saya")}
               >
                 IKUTI KELAS
               </button>

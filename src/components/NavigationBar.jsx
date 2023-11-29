@@ -13,13 +13,13 @@ const NavigationBar = () => {
           <Link className="navbar-brand align-items-center justify-content-center mt-3" to="/">
             <img src={BelajarWhite} />
           </Link>
-          <div className="input-group" style={{ width: "526px", padding: "12px 24px 12px 24px", borderRadius: "16px" }}>
+          <div className="input-group border border-0" style={{ width: "526px", padding: "12px 24px 12px 24px" }}>
             <input
               type="text"
-              className="form-control"
+              className="form-control border border-0"
               placeholder="Cari Kursus Terbaik ...."
             />
-            <span className="input-group-text">
+            <span className="input-group-text border border-0 bg-white">
               <Icon
                 className=""
                 icon="bx:search-alt"

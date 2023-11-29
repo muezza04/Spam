@@ -6,8 +6,11 @@ import WebDevelopment from "../../public/web-development.svg";
 import AndroidDevelopment from "../../public/android-development.svg";
 import IOSDevelopment from "../../public/ios-development.svg";
 import DataScience from "../../public/data-science.svg";
+import { useNavigate } from "react-router-dom";
 
 const KategoriBelajar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="kategori-belajar">
       <div className="container">
@@ -36,6 +39,7 @@ const KategoriBelajar = () => {
                   border: "none",
                 }}
                 className="bg-transparent"
+                onClick={()=> navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={UiUxDesign} />
                 <Card.Body>
@@ -53,6 +57,7 @@ const KategoriBelajar = () => {
                   border: "none",
                 }}
                 className="bg-transparent"
+                onClick={()=> navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={ProductManagement} />
                 <Card.Body>
@@ -70,6 +75,7 @@ const KategoriBelajar = () => {
                   border: "none",
                 }}
                 className="bg-transparent"
+                onClick={()=> navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={WebDevelopment} />
                 <Card.Body>
@@ -87,6 +93,7 @@ const KategoriBelajar = () => {
                   border: "none",
                 }}
                 className="bg-transparent"
+                onClick={()=> navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={AndroidDevelopment} />
                 <Card.Body>
@@ -121,6 +128,7 @@ const KategoriBelajar = () => {
                   border: "none",
                 }}
                 className="bg-transparent"
+                onClick={()=> navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={DataScience} />
                 <Card.Body>

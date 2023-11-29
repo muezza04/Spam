@@ -106,7 +106,7 @@ const KursusPopuler = () => {
                       <a>120 Menit </a>
                     </span>
                   </Card.Text>
-                  <div>
+                  <div className="">
                     <Icon icon="fluent:premium-20-filled" />
                     <Button style={{ backgroundColor: "#489CFF", color: "" }}>
                       Beli Rp 249.000
