@@ -1,13 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function Login() {
     
   return (
     <div className='container-fluid'style={{width: '1440x', height: '950px', top: '-987px', left: '1575px'}}>
         <div className='row align-items-center'>
             <div className='col-md-6' >
+           
                 <form style={{width: '452px', height: '348px', top: '301px', left: '158px'}} >
                     <h2>Login</h2>
                     <div className='mb-3'>
@@ -31,11 +31,13 @@ function Login() {
                         />
                     </div>
                     <button type='submit' className='btn btn-primary rounded-pill' style={{width: '452px', height: '48px', top: '8px', left: '0px'}}>Login</button>
+                    <p style={{ marginTop: '10px', textAlign: 'center'}}>Belum punya akun? <a href='/register'>Daftar di sini</a></p>
                 </form>
+                
             </div>
-            <div className='col-md-6'>
+            <div className='col-md-6 d-none d-md-block'> 
                 <img 
-                src="/images/img.jpg"
+                src="/img.svg"
                 alt='Side Image'
                 className='img-fluid'
                 />
