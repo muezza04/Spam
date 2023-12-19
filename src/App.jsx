@@ -18,14 +18,15 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/notif" element={<Notif />} />
+
           <Route path="/otp/:email" element={<Otp />}/>
           <Route path="/akunprofil" element={<AkunProfil />}/>
           <Route path="/ubahpw" element={<Ubahpw />}/>
           <Route path="/riwayat" element={<Riwayat/>}/>
     
          
-        </Routes>
-        <Footer />
+    </Routes>
+        
     </div>
   );
 }

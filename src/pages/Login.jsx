@@ -74,11 +74,15 @@ function Login() {
                     </div>
                     <button type='submit' className='btn btn-primary rounded-pill' style={{width: '452px', height: '48px', top: '8px', left: '0px'}}>Login</button>
                     <p style={{ marginTop: '10px', textAlign: 'center'}}>Belum punya akun? <a href='/register'>Daftar di sini</a></p>
+                    <p style={{ marginTop: '10px', textAlign: 'center'}}>Belum punya akun? <a href='/register'>Daftar di sini</a></p>
                 </form>
+                
                 
             </div>
             <div className='col-md-6 d-none d-md-block'> 
+            <div className='col-md-6 d-none d-md-block'> 
                 <img 
+                src="/img.svg"
                 src="/img.svg"
                 alt='Side Image'
                 className='img-fluid'
