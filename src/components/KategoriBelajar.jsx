@@ -34,14 +34,14 @@ const KategoriBelajar = () => {
             <div className="col">
               <Card
                 style={{
-                  width: "fixed(160px)",
-                  height: "hug(136px)",
+                  width: "100%",
+                  height: "auto",
                   border: "none",
                 }}
                 className="bg-transparent"
                 onClick={() => navigate("/detail-kelas/:id")}
               >
-                <Card.Img variant="top" src={UiUxDesign} />
+                <Card.Img variant="top" src={UiUxDesign} className="img-fluid" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "12px", fontWeight: "bold" }}>
                     UI/UX Design
@@ -52,14 +52,14 @@ const KategoriBelajar = () => {
             <div className="col">
               <Card
                 style={{
-                  width: "fixed(160px)",
-                  height: "hug(136px)",
-                  border: "none",
+                  width: "100%",
+                height: "auto",
+                border: "none",
                 }}
                 className="bg-transparent"
                 onClick={() => navigate("/detail-kelas/:id")}
               >
-                <Card.Img variant="top" src={ProductManagement} />
+                <Card.Img variant="top" src={ProductManagement} className="img-fluid" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "12px", fontWeight: "bold" }}>
                     Product Management
@@ -70,14 +70,14 @@ const KategoriBelajar = () => {
             <div className="col">
               <Card
                 style={{
-                  width: "fixed(160px)",
-                  height: "hug(136px)",
-                  border: "none",
+                  width: "100%",
+                height: "auto",
+                border: "none",
                 }}
                 className="bg-transparent"
                 onClick={() => navigate("/detail-kelas/:id")}
               >
-                <Card.Img variant="top" src={WebDevelopment} />
+                <Card.Img variant="top" src={WebDevelopment} className="img-fluid" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "12px", fontWeight: "bold" }}>
                     Web Development
@@ -88,14 +88,14 @@ const KategoriBelajar = () => {
             <div className="col">
               <Card
                 style={{
-                  width: "fixed(160px)",
-                  height: "hug(136px)",
-                  border: "none",
+                  width: "100%",
+                height: "auto",
+                border: "none",
                 }}
                 className="bg-transparent"
                 onClick={() => navigate("/detail-kelas/:id")}
               >
-                <Card.Img variant="top" src={AndroidDevelopment} />
+                <Card.Img variant="top" src={AndroidDevelopment} className="img-fluid" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "12px", fontWeight: "bold" }}>
                     Android Development
@@ -106,13 +106,13 @@ const KategoriBelajar = () => {
             <div className="col">
               <Card
                 style={{
-                  width: "fixed(160px)",
-                  height: "hug(136px)",
-                  border: "none",
+                  width: "100%",
+                height: "auto",
+                border: "none",
                 }}
                 className="bg-transparent"
               >
-                <Card.Img variant="top" src={IOSDevelopment} />
+                <Card.Img variant="top" src={IOSDevelopment} className="img-fluid" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "12px", fontWeight: "bold" }}>
                     IOS Development
@@ -123,14 +123,14 @@ const KategoriBelajar = () => {
             <div className="col">
               <Card
                 style={{
-                  width: "fixed(160px)",
-                  height: "hug(136px)",
-                  border: "none",
+                  width: "100%",
+                height: "auto",
+                border: "none",
                 }}
                 className="bg-transparent"
                 onClick={() => navigate("/detail-kelas/:id")}
               >
-                <Card.Img variant="top" src={DataScience} />
+                <Card.Img variant="top" src={DataScience} className="img-fluid" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "12px", fontWeight: "bold" }}>
                     Data Science
