@@ -1,8 +1,5 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import { CardSubtitle } from "react-bootstrap";
-import UiUxDesign from "../../public/uiux-design.svg";
 import { Icon } from "@iconify/react";
 import KursusPopulerImage from "../../public/kursus-populer-image.svg";
 
@@ -23,7 +20,7 @@ const KursusPopuler = () => {
             </span>
           </button>
         </div>
-        <div className="row d-flex mb-2 ">
+        <div className="row row-cols-auto  d-flex mb-2 ">
           <div className="col align-items-center d-flex gap-4">
             <button className="btn rounded-pill btn-sm">All</button>
             <button className="btn rounded-pill btn-sm">Data Science</button>
@@ -46,213 +43,322 @@ const KursusPopuler = () => {
               Business Intelligence
             </button>
           </div>
-          <div
-            className="row mt-3 justify-content-center align-items-center"
-            style={{ padding: "5px 0 5px 0" }}
-          >
-            <div className="col-12 col-md-4 mb-3">
-              <Card className="card">
-                <Card.Img className="card-img" src={KursusPopulerImage} />
-                <Card.Body>
-                  <div className="d-flex align-items-center justify-content-between">
-                    <Card.Subtitle className="dark-blue100 fw-bold">
-                      UI/UX Design
-                    </Card.Subtitle>
-                    <span className="fw-bold">
-                      <Icon
-                        icon="ic:round-star"
-                        width="12"
-                        height="12"
-                        color="#F9CC00"
-                      />
-                      4.7
-                    </span>
-                  </div>
-                  <Card.Title className="kursus-populer-title fw-bold">
+        </div>
+        <div className="listing row row-cols-3 mt-4 justify-content-center align-items-center">
+          <div className="col d-flex gap-4">
+            <Card className="card" style={{ borderRadius: "1.3rem" }}>
+              <Card.Img className="card-img" src={KursusPopulerImage} />
+              <Card.Body className="row">
+                <div className="col-8 d-flex align-items-center justify-content-between">
+                  <Card.Subtitle
+                    className="dark-blue100 fw-bold"
+                    style={{ fontSize: "10px", marginTop: "-24px" }}
+                  >
+                    UI/UX Design
+                  </Card.Subtitle>
+                </div>
+                <div className="col-4 d-flex align-items-center justify-content-end">
+                  <span
+                    className="fw-bold d-flex"
+                    style={{ marginTop: "-12px" }}
+                  >
+                    <Icon
+                      icon="ic:round-star"
+                      width="12"
+                      height="12"
+                      color="#F9CC00"
+                    />
+                    <p style={{ fontSize: "10px" }}>4.7</p>
+                  </span>
+                </div>
+                <div style={{ marginTop: "-12px" }}>
+                  <Card.Title
+                    className="kursus-populer-title fw-bold"
+                    style={{ fontSize: "10px" }}
+                  >
                     Belajar Web Designer dengan Figma
                   </Card.Title>
-                  <Card.Subtitle style={{ size: "8px" }}>
+                  <Card.Subtitle
+                    className="fw-bold"
+                    style={{ fontSize: "8px" }}
+                  >
                     by Angela Doe
                   </Card.Subtitle>
-                  <Card.Text
-                    className="d-flex justify-content-between"
-                    style={{ gap: "3px", padding: "3px 0 3px 0" }}
+                </div>
+                <Card.Text
+                  className="d-flex justify-content-between fw-bold"
+                  style={{ gap: "3px", padding: "3px 0 3px 0" }}
+                >
+                  <span
+                    className="col-4"
+                    style={{
+                      gap: "4px",
+                      marginLeft: "10px",
+                      fontSize: "8px",
+                    }}
                   >
-                    <span style={{ gap: "4px" }}>
-                      <Icon
-                        icon="mdi:badge-outline"
-                        color="#73CA5C"
-                        width="14"
-                        height="14"
-                      />
-                      <a style={{ color: "#6148FF" }}>Intermediate Level</a>
-                    </span>
-                    <span style={{ gap: "4px" }}>
-                      <Icon
-                        icon="mdi:badge-outline"
-                        color="#73CA5C"
-                        width="14"
-                        height="14"
-                      />{" "}
-                      <a>10 Modul </a>
-                    </span>
-                    <span style={{ gap: "4px" }}>
-                      <Icon
-                        icon="ri:time-fill"
-                        color="#73CA5C"
-                        width="14"
-                        height="14"
-                      />{" "}
-                      <a>120 Menit </a>
-                    </span>
-                  </Card.Text>
-                  <div>
-                    <Icon icon="fluent:premium-20-filled" />
-                    <Button style={{ backgroundColor: "#489CFF", color: "" }}>
-                      Beli Rp 249.000
-                    </Button>
-                  </div>
-                </Card.Body>
-              </Card>
-            </div>
-            <div className="col-12 col-md-4 mb-3">
-              <Card className="card">
-                <Card.Img
-                  className="card-img"
-                  variant="top"
-                  src={KursusPopulerImage}
-                />
-                <Card.Body>
-                  <div className="d-flex align-items-center justify-content-between">
-                    <Card.Subtitle className="dark-blue100 fw-bold">
-                      UI/UX Design
-                    </Card.Subtitle>
-                    <span className="fw-bold">
-                      <Icon
-                        icon="ic:round-star"
-                        width="12"
-                        height="12"
-                        color="#F9CC00"
-                      />
-                      4.8
-                    </span>
-                  </div>
-                  <Card.Title className="kursus-populer-title fw-bold">
+                    <Icon
+                      icon="mdi:badge-outline"
+                      color="#73CA5C"
+                      width="14"
+                      height="14"
+                    />
+                    <a style={{ color: "#6148FF" }}>Intermediate Level</a>
+                  </span>
+                  <span className="col" style={{ gap: "4px", fontSize: "8px" }}>
+                    <Icon
+                      icon="clarity:book-line"
+                      color="#73CA5C"
+                      width="14"
+                      height="14"
+                    />{" "}
+                    <a>10 Modul </a>
+                  </span>
+                  <span className="col" style={{ gap: "4px", fontSize: "8px" }}>
+                    <Icon
+                      icon="ri:time-fill"
+                      color="#73CA5C"
+                      width="14"
+                      height="14"
+                    />{" "}
+                    <a>120 Menit </a>
+                  </span>
+                </Card.Text>
+                <div
+                  className="col-8 btn btn-sm rounded-pill text-white fw-bold align-items-center "
+                  style={{
+                    gap: "5px",
+                    marginTop: "-15px",
+                    marginLeft: "12px",
+                    backgroundColor: "#489CFF",
+                    border: "none",
+                    width: "143px",
+                    padding: ".10rem",
+                  }}
+                >
+                  <Icon
+                    icon="fluent:premium-20-filled"
+                    className="light-blue5"
+                  />
+                  <span className="me-3 ms-1 light-blue5" style={{ fontSize: "10px"}}>
+                    Beli
+                  </span>
+                  <span className="light-blue5 " style={{ fontSize: "10px" }}>
+                    Rp 249.000
+                  </span>
+                </div>
+              </Card.Body>
+            </Card>
+          </div>
+          <div className="col d-flex gap-4">
+            <Card className="card" style={{ borderRadius: "1.3rem" }}>
+              <Card.Img className="card-img" src={KursusPopulerImage} />
+              <Card.Body className="row">
+                <div className="col-8 d-flex align-items-center justify-content-between">
+                  <Card.Subtitle
+                    className="dark-blue100 fw-bold"
+                    style={{ fontSize: "10px", marginTop: "-24px" }}
+                  >
+                    UI/UX Design
+                  </Card.Subtitle>
+                </div>
+                <div className="col-4 d-flex align-items-center justify-content-end">
+                  <span
+                    className="fw-bold d-flex"
+                    style={{ marginTop: "-12px" }}
+                  >
+                    <Icon
+                      icon="ic:round-star"
+                      width="12"
+                      height="12"
+                      color="#F9CC00"
+                    />
+                    <p style={{ fontSize: "10px" }}>4.7</p>
+                  </span>
+                </div>
+                <div style={{ marginTop: "-12px" }}>
+                  <Card.Title
+                    className="kursus-populer-title fw-bold"
+                    style={{ fontSize: "10px" }}
+                  >
                     Belajar Web Designer dengan Figma
                   </Card.Title>
-                  <Card.Subtitle style={{ size: "8px" }}>
+                  <Card.Subtitle
+                    className="fw-bold"
+                    style={{ fontSize: "8px" }}
+                  >
                     by Angela Doe
                   </Card.Subtitle>
-                  <Card.Text
-                    className="d-flex justify-content-between"
-                    style={{ gap: "3px", padding: "3px 0 3px 0" }}
+                </div>
+                <Card.Text
+                  className="d-flex justify-content-between fw-bold"
+                  style={{ gap: "3px", padding: "3px 0 3px 0" }}
+                >
+                  <span
+                    className="col-4"
+                    style={{
+                      gap: "4px",
+                      marginLeft: "10px",
+                      fontSize: "8px",
+                    }}
                   >
-                    <span style={{ gap: "4px" }}>
-                      <Icon
-                        icon="mdi:badge-outline"
-                        color="#73CA5C"
-                        width="14"
-                        height="14"
-                      />
-                      <a style={{ color: "#6148FF" }}>Intermediate Level</a>
-                    </span>
-                    <span style={{ gap: "4px" }}>
-                      <Icon
-                        icon="mdi:badge-outline"
-                        color="#73CA5C"
-                        width="14"
-                        height="14"
-                      />
-                      <a>5 Modul </a>
-                    </span>
-                    <span style={{ gap: "4px" }}>
-                      <Icon
-                        icon="ri:time-fill"
-                        color="#73CA5C"
-                        width="14"
-                        height="14"
-                      />
-                      <a>60 Menit </a>
-                    </span>
-                  </Card.Text>
-                  <div>
-                    <Icon icon="fluent:premium-20-filled" />
-                    <Button style={{ backgroundColor: "#489CFF", color: "" }}>
-                      Beli Rp 249.000
-                    </Button>
-                  </div>
-                </Card.Body>
-              </Card>
-            </div>
-            <div className="col-12 col-md-4 mb-3">
-              <Card className="card">
-                <Card.Img
-                  className="card-img"
-                  variant="top"
-                  src={KursusPopulerImage}
-                />
-                <Card.Body>
-                  <div className="d-flex align-items-center justify-content-between">
-                    <Card.Subtitle className="dark-blue100 fw-bold">
-                      UI/UX Design
-                    </Card.Subtitle>
-                    <span className="fw-bold">
-                      <Icon
-                        icon="ic:round-star"
-                        width="12"
-                        height="12"
-                        color="#F9CC00"
-                      />
-                      4.4
-                    </span>
-                  </div>
-                  <Card.Title className="kursus-populer-title fw-bold">
+                    <Icon
+                      icon="mdi:badge-outline"
+                      color="#73CA5C"
+                      width="14"
+                      height="14"
+                    />
+                    <a style={{ color: "#6148FF" }}>Intermediate Level</a>
+                  </span>
+                  <span className="col" style={{ gap: "4px", fontSize: "8px" }}>
+                    <Icon
+                      icon="clarity:book-line"
+                      color="#73CA5C"
+                      width="14"
+                      height="14"
+                    />{" "}
+                    <a>10 Modul </a>
+                  </span>
+                  <span className="col" style={{ gap: "4px", fontSize: "8px" }}>
+                    <Icon
+                      icon="ri:time-fill"
+                      color="#73CA5C"
+                      width="14"
+                      height="14"
+                    />{" "}
+                    <a>120 Menit </a>
+                  </span>
+                </Card.Text>
+                <div
+                  className="col-8 btn btn-sm rounded-pill text-white fw-bold align-items-center"
+                  style={{
+                    gap: "5px",
+                    marginTop: "-15px",
+                    marginLeft: "12px",
+                    backgroundColor: "#489CFF",
+                    border: "none",
+                    width: "143px",
+                    padding: ".10rem",
+                  }}
+                >
+                  <Icon
+                    icon="fluent:premium-20-filled"
+                    className="light-blue5"
+                  />
+                  <span className="me-3 ms-1 light-blue5" style={{ fontSize: "10px" }}>
+                    Beli
+                  </span>
+                  <span className="light-blue5" style={{ fontSize: "10px" }}>
+                    Rp 249.000
+                  </span>
+                </div>
+              </Card.Body>
+            </Card>
+          </div>
+          <div className="col d-flex gap-4">
+            <Card className="card" style={{ borderRadius: "1.3rem" }}>
+              <Card.Img className="card-img" src={KursusPopulerImage} />
+              <Card.Body className="row">
+                <div className="col-8 d-flex align-items-center justify-content-between">
+                  <Card.Subtitle
+                    className="dark-blue100 fw-bold"
+                    style={{ fontSize: "10px", marginTop: "-24px" }}
+                  >
+                    UI/UX Design
+                  </Card.Subtitle>
+                </div>
+                <div className="col-4 d-flex align-items-center justify-content-end">
+                  <span
+                    className="fw-bold d-flex"
+                    style={{ marginTop: "-12px" }}
+                  >
+                    <Icon
+                      icon="ic:round-star"
+                      width="12"
+                      height="12"
+                      color="#F9CC00"
+                    />
+                    <p style={{ fontSize: "10px" }}>4.7</p>
+                  </span>
+                </div>
+                <div style={{ marginTop: "-12px" }}>
+                  <Card.Title
+                    className="kursus-populer-title fw-bold"
+                    style={{ fontSize: "10px" }}
+                  >
                     Belajar Web Designer dengan Figma
                   </Card.Title>
-                  <Card.Subtitle style={{ size: "8px" }}>
+                  <Card.Subtitle
+                    className="fw-bold"
+                    style={{ fontSize: "8px" }}
+                  >
                     by Angela Doe
                   </Card.Subtitle>
-                  <Card.Text
-                    className="d-flex justify-content-between"
-                    style={{ gap: "3px", padding: "3px 0 3px 0" }}
+                </div>
+                <Card.Text
+                  className="d-flex justify-content-between fw-bold"
+                  style={{ gap: "3px", padding: "3px 0 3px 0" }}
+                >
+                  <span
+                    className="col-4"
+                    style={{
+                      gap: "4px",
+                      marginLeft: "10px",
+                      fontSize: "8px",
+                    }}
                   >
-                    <span style={{ gap: "4px" }}>
-                      <Icon
-                        icon="mdi:badge-outline"
-                        color="#73CA5C"
-                        width="14"
-                        height="14"
-                      />
-                      <a style={{ color: "#6148FF" }}>Advanced Level</a>
-                    </span>
-                    <span style={{ gap: "4px" }}>
-                      <Icon
-                        icon="mdi:badge-outline"
-                        color="#73CA5C"
-                        width="14"
-                        height="14"
-                      />{" "}
-                      <a>10 Modul </a>
-                    </span>
-                    <span style={{ gap: "4px" }}>
-                      <Icon
-                        icon="ri:time-fill"
-                        color="#73CA5C"
-                        width="14"
-                        height="14"
-                      />{" "}
-                      <a>120 Menit </a>
-                    </span>
-                  </Card.Text>
-                  <div>
-                    <Icon icon="fluent:premium-20-filled" />
-                    <Button style={{ backgroundColor: "#489CFF", color: "" }}>
-                      Beli Rp 249.000
-                    </Button>
-                  </div>
-                </Card.Body>
-              </Card>
-            </div>
+                    <Icon
+                      icon="mdi:badge-outline"
+                      color="#73CA5C"
+                      width="14"
+                      height="14"
+                    />
+                    <a style={{ color: "#6148FF" }}>Intermediate Level</a>
+                  </span>
+                  <span className="col" style={{ gap: "4px", fontSize: "8px" }}>
+                    <Icon
+                      icon="clarity:book-line"
+                      color="#73CA5C"
+                      width="14"
+                      height="14"
+                    />{" "}
+                    <a>10 Modul </a>
+                  </span>
+                  <span className="col" style={{ gap: "4px", fontSize: "8px" }}>
+                    <Icon
+                      icon="ri:time-fill"
+                      color="#73CA5C"
+                      width="14"
+                      height="14"
+                    />{" "}
+                    <a>120 Menit </a>
+                  </span>
+                </Card.Text>
+                <div
+                  className="col-8 btn btn-sm rounded-pill text-white fw-bold align-items-center"
+                  style={{
+                    gap: "5px",
+                    marginTop: "-15px",
+                    marginLeft: "12px",
+                    backgroundColor: "#489CFF",
+                    border: "none",
+                    width: "143px",
+                    padding: ".10rem",
+                  }}
+                >
+                  <Icon
+                    icon="fluent:premium-20-filled"
+                    className="light-blue5"
+                  />
+                  <span className="me-3 ms-1 light-blue5" style={{ fontSize: "10px" }}>
+                    Beli
+                  </span>
+                  <span className="light-blue5" style={{ fontSize: "10px" }}>
+                    Rp 249.000
+                  </span>
+                </div>
+              </Card.Body>
+            </Card>
           </div>
         </div>
       </div>

@@ -1,24 +1,27 @@
 import React from "react";
 import HeroPoster from "../../public/hero-poster.svg";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
-    <section className="hero w-100">
-      <div className="row row align-items-center" style={{marginTop: "100px"}}>
-        <div className="col" style={{opacity: ""}}>
-          <img src={HeroPoster} />
+    <section className="hero">
+      <div className="row d-flex align-items-center bg-dark-blue100">
+        <div className="col-md ">
+          <img className="hero-img img-fluid" src={HeroPoster} />
         </div>
-        <div className="col d-flex align-items-center justify-content-center fw-bold">
-          <div className="col">
-            <span className="pt-lg-4 text-white" style={{ fontSize: "24px"}}>
+        <div className="col-md d-flex align-items-center justify-content-md-start fw-bold">
+          <div className="">
+            <span className="text-white " style={{ fontSize: "24px" }}>
               Belajar
               <br /> dari Praktisi Terbaik!
             </span>
-            <div className="col">
+            <div className="">
               <button
-                className="btn bg-white btn-sm fw-bold text-center dark-blue100 mt-2 rounded-pill "
+                className="btn bg-white btn-sm fw-bold text-center dark-blue100 my-3 rounded-pill "
                 style={{ fontSize: "16px", width: "240px", radius: "10px" }}
-                
+                onClick={() => navigate("/kelas-saya")}
               >
                 IKUTI KELAS
               </button>

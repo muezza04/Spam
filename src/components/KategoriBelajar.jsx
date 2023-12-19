@@ -6,8 +6,11 @@ import WebDevelopment from "../../public/web-development.svg";
 import AndroidDevelopment from "../../public/android-development.svg";
 import IOSDevelopment from "../../public/ios-development.svg";
 import DataScience from "../../public/data-science.svg";
+import { useNavigate } from "react-router-dom";
 
 const KategoriBelajar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="kategori-belajar">
       <div className="container">
@@ -26,9 +29,9 @@ const KategoriBelajar = () => {
             </span>
           </button>
         </div>
-        <div className="row align-items-start">
+        <div className="">
           <div className="row align-items-center justify-content-center text-center ">
-            <div className="col-6 col-md-2 ">
+            <div className="col">
               <Card
                 style={{
                   width: "100%",
@@ -36,6 +39,7 @@ const KategoriBelajar = () => {
                   border: "none",
                 }}
                 className="bg-transparent"
+                onClick={() => navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={UiUxDesign} className="img-fluid" />
                 <Card.Body>
@@ -45,7 +49,7 @@ const KategoriBelajar = () => {
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-6 col-md-2">
+            <div className="col">
               <Card
                 style={{
                   width: "100%",
@@ -53,6 +57,7 @@ const KategoriBelajar = () => {
                 border: "none",
                 }}
                 className="bg-transparent"
+                onClick={() => navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={ProductManagement} className="img-fluid" />
                 <Card.Body>
@@ -62,7 +67,7 @@ const KategoriBelajar = () => {
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-6 col-md-2">
+            <div className="col">
               <Card
                 style={{
                   width: "100%",
@@ -70,6 +75,7 @@ const KategoriBelajar = () => {
                 border: "none",
                 }}
                 className="bg-transparent"
+                onClick={() => navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={WebDevelopment} className="img-fluid" />
                 <Card.Body>
@@ -79,7 +85,7 @@ const KategoriBelajar = () => {
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-6 col-md-2">
+            <div className="col">
               <Card
                 style={{
                   width: "100%",
@@ -87,6 +93,7 @@ const KategoriBelajar = () => {
                 border: "none",
                 }}
                 className="bg-transparent"
+                onClick={() => navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={AndroidDevelopment} className="img-fluid" />
                 <Card.Body>
@@ -96,7 +103,7 @@ const KategoriBelajar = () => {
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-6 col-md-2">
+            <div className="col">
               <Card
                 style={{
                   width: "100%",
@@ -113,7 +120,7 @@ const KategoriBelajar = () => {
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-6 col-md-2">
+            <div className="col">
               <Card
                 style={{
                   width: "100%",
@@ -121,6 +128,7 @@ const KategoriBelajar = () => {
                 border: "none",
                 }}
                 className="bg-transparent"
+                onClick={() => navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={DataScience} className="img-fluid" />
                 <Card.Body>
