@@ -53,25 +53,7 @@ function Register() {
       toast.error(error.message);
     }
   };
-  // const [userData, setUserData] = useState({
-  //   name: '',
-  //   email: '',
-  //   password: '',
-  //   phone: ''
-  // });
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setUserData({ ...userData, [name]: value });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Lakukan logika autentikasi di sini, misalnya mengirim data ke server atau menyimpan di lokal storage.
-  //   console.log('Data yang dikirim:', userData);
-  // };
-
-  
+    
 
   return (
     <div className='container-fluid' style={{ width: '1440px', height: '950px', top: '-987px', left: '1575px' }}>

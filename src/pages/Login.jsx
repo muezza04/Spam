@@ -83,12 +83,12 @@ function Login() {
             <div className='col-md-6 d-none d-md-block'> 
                 <img 
                 src="/img.svg"
-                src="/img.svg"
                 alt='Side Image'
                 className='img-fluid'
                 />
             </div>
         </div>
+    </div>
     </div>
   )
 }
