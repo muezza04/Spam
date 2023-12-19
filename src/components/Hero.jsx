@@ -7,19 +7,19 @@ const Hero = () => {
 
   return (
     <section className="hero">
-      <div className="row row align-items-center d-flex" style={{marginTop: "100px"}}>
-        <div className="col hero-img">
-          <img src={HeroPoster} />
+      <div className="row d-flex align-items-center bg-dark-blue100">
+        <div className="col-md ">
+          <img className="hero-img img-fluid" src={HeroPoster} />
         </div>
-        <div className="col d-flex align-items-center justify-content-center fw-bold">
-          <div className="col">
-            <span className="pt-lg-4 text-white" style={{ fontSize: "24px"}}>
+        <div className="col-md d-flex align-items-center justify-content-md-start fw-bold">
+          <div className="">
+            <span className="text-white " style={{ fontSize: "24px" }}>
               Belajar
               <br /> dari Praktisi Terbaik!
             </span>
-            <div className="col">
+            <div className="">
               <button
-                className="btn bg-white btn-sm fw-bold text-center dark-blue100 mt-2 rounded-pill "
+                className="btn bg-white btn-sm fw-bold text-center dark-blue100 my-3 rounded-pill "
                 style={{ fontSize: "16px", width: "240px", radius: "10px" }}
                 onClick={() => navigate("/kelas-saya")}
               >

@@ -29,9 +29,9 @@ const KategoriBelajar = () => {
             </span>
           </button>
         </div>
-        <div className="row align-items-start">
+        <div className="">
           <div className="row align-items-center justify-content-center text-center ">
-            <div className="col-sm-2 ">
+            <div className="col">
               <Card
                 style={{
                   width: "fixed(160px)",
@@ -39,7 +39,7 @@ const KategoriBelajar = () => {
                   border: "none",
                 }}
                 className="bg-transparent"
-                onClick={()=> navigate("/detail-kelas/:id")}
+                onClick={() => navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={UiUxDesign} />
                 <Card.Body>
@@ -49,7 +49,7 @@ const KategoriBelajar = () => {
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-sm-2">
+            <div className="col">
               <Card
                 style={{
                   width: "fixed(160px)",
@@ -57,7 +57,7 @@ const KategoriBelajar = () => {
                   border: "none",
                 }}
                 className="bg-transparent"
-                onClick={()=> navigate("/detail-kelas/:id")}
+                onClick={() => navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={ProductManagement} />
                 <Card.Body>
@@ -67,7 +67,7 @@ const KategoriBelajar = () => {
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-sm-2">
+            <div className="col">
               <Card
                 style={{
                   width: "fixed(160px)",
@@ -75,7 +75,7 @@ const KategoriBelajar = () => {
                   border: "none",
                 }}
                 className="bg-transparent"
-                onClick={()=> navigate("/detail-kelas/:id")}
+                onClick={() => navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={WebDevelopment} />
                 <Card.Body>
@@ -85,7 +85,7 @@ const KategoriBelajar = () => {
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-sm-2">
+            <div className="col">
               <Card
                 style={{
                   width: "fixed(160px)",
@@ -93,7 +93,7 @@ const KategoriBelajar = () => {
                   border: "none",
                 }}
                 className="bg-transparent"
-                onClick={()=> navigate("/detail-kelas/:id")}
+                onClick={() => navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={AndroidDevelopment} />
                 <Card.Body>
@@ -103,7 +103,7 @@ const KategoriBelajar = () => {
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-sm-2">
+            <div className="col">
               <Card
                 style={{
                   width: "fixed(160px)",
@@ -120,7 +120,7 @@ const KategoriBelajar = () => {
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-sm-2">
+            <div className="col">
               <Card
                 style={{
                   width: "fixed(160px)",
@@ -128,7 +128,7 @@ const KategoriBelajar = () => {
                   border: "none",
                 }}
                 className="bg-transparent"
-                onClick={()=> navigate("/detail-kelas/:id")}
+                onClick={() => navigate("/detail-kelas/:id")}
               >
                 <Card.Img variant="top" src={DataScience} />
                 <Card.Body>
