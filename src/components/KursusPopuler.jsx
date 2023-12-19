@@ -50,7 +50,7 @@ const KursusPopuler = () => {
             className="row mt-3 justify-content-center align-items-center"
             style={{ padding: "5px 0 5px 0" }}
           >
-            <div className="col d-flex">
+            <div className="col-12 col-md-4 mb-3">
               <Card className="card">
                 <Card.Img className="card-img" src={KursusPopulerImage} />
                 <Card.Body>
@@ -115,7 +115,7 @@ const KursusPopuler = () => {
                 </Card.Body>
               </Card>
             </div>
-            <div className="col d-flex">
+            <div className="col-12 col-md-4 mb-3">
               <Card className="card">
                 <Card.Img
                   className="card-img"
@@ -184,7 +184,7 @@ const KursusPopuler = () => {
                 </Card.Body>
               </Card>
             </div>
-            <div className="col d-flex">
+            <div className="col-12 col-md-4 mb-3">
               <Card className="card">
                 <Card.Img
                   className="card-img"
