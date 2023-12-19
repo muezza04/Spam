@@ -31,7 +31,6 @@ function App() {
           <Route path="/ubahpw" element={<Ubahpw />}/>
           <Route path="/riwayat" element={<Riwayat/>}/>
     
-         
           <Route path="/kelas-saya" element={<KelasSaya />} />
           <Route path="/pilih-premium" element={<PilihPremium />} />
           <Route path="/pilih-gratis" element={<PilihGratis />} />
