@@ -1,10 +1,13 @@
 import { auto } from '@popperjs/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useNavigate } from 'react-router-dom';
 import KursusPopuler from "../components/KursusPopuler";
 import { Card } from 'react-bootstrap';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import Riwayat from '../pages/Riwayat';
 
 const IsiRiwayat = () => {
    const styles = {
@@ -150,7 +153,49 @@ const IsiRiwayat = () => {
           marginBottom: '20px', 
         },
     };
-   
+    const [riwayat, setRiwayat] = useState([]);
+    useEffect(() => {
+      const handleriwayatpembayaran = async () => {
+  
+        try {
+          
+          const token = localStorage.getItem("token");
+          console.log(token)
+          let config = {
+            method: "get",
+            url: `https://mooc.code69.my.id/order/history`,
+            headers: {
+              Authorization: `Bearer ${token}`,
+            
+            },
+           
+          };
+    
+          const response = await axios.request(config);
+          if(response.status == 200){
+            console.log(response)
+            setRiwayat(response.data.data);
+            console.log(response.status);
+            console.log(response.message)}
+          else{console.log(response.status);
+            console.log(response.message)}
+  
+             
+          // navigate("/");
+    
+          // Temporary solution
+          // window.location.href = "/";
+        } catch (error) {
+          if (axios.isAxiosError(error)) {
+            toast.error(error.response.data.message);
+            return;
+          }
+          toast.error(error.message);
+        }
+      };
+      handleriwayatpembayaran()
+    }, []);
+    console.log(riwayat)
     return (
         <div className='row'>
             <div style={styles.mainContainer}>
@@ -192,7 +237,10 @@ const IsiRiwayat = () => {
                                 <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
                                 <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
                                 </svg>
-                                Keluar</a>
+                                <button onClick={() => {
+                                localStorage.removeItem("token");
+                                window.location.href = "/";
+                              }}>Keluar</button></a>
                             </div>
                             </aside>
 
@@ -204,12 +252,26 @@ const IsiRiwayat = () => {
                                 </div> 
 
                                 <div >
-                                  <div>
+                                  {/* <div>
                                     <img  style={styles.cardimg} width="100%" height="100%"src='src\assets\card.png' alt='pembayaran'></img>
+                                  </div> */}
+                                  <div classname="card">
+                                  <img src="src\assets\card.png" className="card-img-top"/>
+                                  <div className="card-body">
+                                    <h5 className="card-title">{riwayat[0]?.courseCategory}</h5>
+                                    <p className="card-text">{riwayat[0]?.courseLevel}</p>
                                   </div>
-                                  <div>
-                                    <img  style={styles.cardimg} width="100%" height="100%"src='src\assets\card.png' alt='pembayaran'></img>
-                                  </div>    
+                                  <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">An item</li>
+                                    <li className="list-group-item">A second item</li>
+                                    <li className="list-group-item">A third item</li>
+                                  </ul>
+                                  <div className="card-body">
+                                    <a href="#" className="card-link">Card link</a>
+                                    <a href="#" className="card-link">Another link</a>
+                                  </div>
+                                </div>
+                                                                  
                                   {/* <Card className="card" >
                                     <Card.Img className="card-img" src={KursusPopulerImage} />
                                     <Card.Body>
