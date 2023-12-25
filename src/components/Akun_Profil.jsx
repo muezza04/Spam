@@ -1,8 +1,11 @@
 import { auto } from '@popperjs/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+
 
 const Akun_Profil = () => {
    const styles = {
@@ -169,7 +172,122 @@ const Akun_Profil = () => {
     },
 
     };
-   
+
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [phoneNumber, setphoneNumber] = useState("");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
+  const [imageUrl, setImageUrl] = useState(null);
+  const [datauser, setDatauser] = useState({
+    username: "",
+    emailAddress: "",
+    phoneNumber: "",
+    city: "",
+    country: "",
+    imageUrl: null
+    });
+  
+  console.log(datauser.city)
+  // console.log(username)
+  // console.log(phoneNumber)
+  // console.log(city)
+  // console.log(country)
+  console.log('foto',imageUrl)
+ 
+
+    const handleprofil = async (e) => {
+      e.preventDefault();
+  
+      try {
+                        
+        console.log(email)
+        console.log(phoneNumber)
+        console.log(username)
+        console.log(city)
+        console.log(country)
+
+        const token = localStorage.getItem("token");
+        console.log(token)
+        let config = {
+          method: "put",
+          url: `https://mooc.code69.my.id/user/profile`,
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
+          
+          },
+          data:{
+            emailAddress: email,
+            username: username,
+            phoneNumber: phoneNumber,
+            city: city,
+            country: country,
+            file: imageUrl, 
+          },
+        };
+  
+        const response = await axios.request(config);
+        if(response.status == 200){
+          console.log(response.status);
+          console.log(response.message)}
+        else{console.log(response.status);
+          console.log(response.message)}
+           
+        // navigate("/");
+  
+        // Temporary solution
+        // window.location.href = "/";
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          toast.error(error.response.data.message);
+          return;
+        }
+        toast.error(error.message);
+      }
+    };
+    
+    useEffect(()=> {const handleuser = async () => {
+  
+      try {
+        
+        const token = localStorage.getItem("token");
+        console.log(token)
+        let config = {
+          method: "get",
+          url: `https://mooc.code69.my.id/user`,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          
+          },
+         
+        };
+  
+        const response = await axios.request(config);
+        if(response.status == 200){
+          console.log(response)
+          setDatauser(response.data.data);
+          console.log(response.status);
+          console.log(response.message)}
+        else{console.log(response.status);
+          console.log(response.message)}
+
+           
+        // navigate("/");
+  
+        // Temporary solution
+        // window.location.href = "/";
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          toast.error(error.response.data.message);
+          return;
+        }
+        toast.error(error.message);
+      }
+    };
+    handleuser() 
+    }, [])
+
     return (
         <div className='row'>
             <div style={styles.mainContainer}>
@@ -211,7 +329,11 @@ const Akun_Profil = () => {
                                 <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
                                 <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
                                 </svg>
-                                Keluar</a>
+                                <button onClick={() => {
+                                localStorage.removeItem("token");
+                                window.location.href = "/";
+                              }}>Keluar</button>
+                                </a>
                             </div>
                           </aside>
 
@@ -219,9 +341,9 @@ const Akun_Profil = () => {
                             <div style={styles.wrap}>
                               <div style={styles.sidebarright}>
                               <div style={styles.profileContent}>
-                                <div style={styles.profileImagePlaceholder}>
-                                <div class="custom-file" style={styles.uploadarea}>
-                                 <input type="file" class="custom-file-input" id="inputGroupFile01"></input>
+                                <div style={styles.profileImagePlaceholder}> <img src={datauser.imageUrl} alt="" />
+                                <div className="custom-file" style={styles.uploadarea}> 
+                                 <input onChange={(e)=>setImageUrl( e.target.files[0])} type="file" className="custom-file-input" id="inputGroupFile01"></input>
                                 </div>
                                 </div>
                                 <div>
@@ -229,7 +351,7 @@ const Akun_Profil = () => {
                                         Nama
                                     </label>
                                     <div className="input-group">
-                                        <input type="text" className="form-control" name="name" placeholder="Misal: John Doe" style={styles.input}></input>
+                                        <input onChange={(e)=>setUsername(e.target.value)} type="text" className="form-control" name="name" placeholder="Misal: John Doe" style={styles.input}></input>
                                     </div>                                    
                                 </div>
                                 <div>
@@ -237,7 +359,7 @@ const Akun_Profil = () => {
                                         Email
                                     </label>
                                     <div className="input-group">
-                                        <input type="email" className="form-control" name="email" placeholder="JohnD@example.com" style={styles.input}></input>
+                                        <input onChange={(e)=>setEmail(e.target.value)} type="email" className="form-control" name="email" placeholder="JohnD@example.com" style={styles.input}></input>
                                     </div>                                    
                                 </div>
                                 <div>
@@ -245,14 +367,14 @@ const Akun_Profil = () => {
                                         Nomer Telepon
                                     </label>
                                     <div className="input-group">
-                                        <input type="number" className="form-control" name="numberphone" placeholder="+62" style={styles.input}></input>
+                                        <input onChange={(e)=>setphoneNumber(e.target.value)} type="number" className="form-control" name="numberphone" placeholder="+62" style={styles.input}></input>
                                   </div>    
                                   <div>
                                     <label style={styles.label}>
                                         Negara
                                     </label>
                                     <div className="input-group">
-                                        <input type="text" className="form-control" name="name" placeholder="Masukkan Negara Tempat Tinggal" style={styles.input}></input>
+                                        <input onChange={(e)=>setCountry(e.target.value)} type="text" className="form-control" name="name" placeholder="Masukkan Negara Tempat Tinggal" style={styles.input}></input>
                                     </div>                                    
                                 </div>             
                                 <div>
@@ -260,12 +382,12 @@ const Akun_Profil = () => {
                                         Kota
                                     </label>
                                     <div className="input-group">
-                                        <input type="text" className="form-control" name="name" placeholder="Masukkan Kota Tempat Tinggal" style={styles.input}></input>
+                                        <input onChange={(e)=>setCity(e.target.value)} type="text" className="form-control" name="name" placeholder="Masukkan Kota Tempat Tinggal" style={styles.input}></input>
                                     </div>                                    
                                 </div>           
                                 </div>
                                 <div >
-                                    <a href='#'><button style={styles.button} className="btn" onClick={() => console.log("Tombol ditekan")}>
+                                    <a href='#'><button style={styles.button} className="btn" onClick={handleprofil}>
                                         Simpan Profil Saya
                                     </button></a>
                                 </div>

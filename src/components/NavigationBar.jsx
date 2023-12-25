@@ -129,9 +129,12 @@ const NavigationBar = () => {
                   />
                   Notifikasi
                 </button>
+
               </div>
               <div className="dropdown">
-                <button
+              <a className="nav-link" href="/akunprofil">
+        <button 
+                
                   className="btn fw-bold text-white align-items-center "
                   type="button"
                   data-bs-toggle="dropdown"
@@ -152,6 +155,7 @@ const NavigationBar = () => {
                   />
                   Akun
                 </button>
+                 </a>
               </div>
             </li>
 
