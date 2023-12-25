@@ -19,6 +19,7 @@ import Riwayat from "./pages/Riwayat";
 import Dashboard from "./pages/admin/Dashboard";
 import LoginAdmin from "./pages/admin/LoginAdmin";
 import KelolaKelas from "./pages/admin/KelolaKelas";
+import ForgetPassword from "./pages/ForgetPassword";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/otp/:email" element={<Otp />}/>
           <Route path="/akunprofil" element={<AkunProfil />}/>
           <Route path="/ubahpw" element={<Ubahpw />}/>
+          <Route path="/forget-password" element={<ForgetPassword />}/>
           <Route path="/riwayat" element={<Riwayat/>}/>
     
           <Route path="/kelas-saya" element={<KelasSaya />} />

@@ -11,17 +11,17 @@ function HomeAdmin({ Toggle }) {
     const fetchData = async () => {
       try {
         // Fetch data for Active Users
-        const activeUserResponse = await fetch('https://mooc.code69.my.id/dashboard-data/activeUser');
+        const activeUserResponse = await axios.get('https://mooc.code69.my.id/dashboard-data/activeUser');
         const activeUserData = await activeUserResponse.json();
         setUserCount(activeUserData.length);
 
         // Fetch data for Active Classes
-        const activeClassResponse = await fetch('https://mooc.code69.my.id/dashboard-data/activeClass');
+        const activeClassResponse = await axios.get('https://mooc.code69.my.id/dashboard-data/activeClass');
         const activeClassData = await activeClassResponse.json();
         setActiveClassCount(activeClassData.length);
 
         // Fetch data for Premium Classes
-        const premiumClassResponse = await fetch('https://mooc.code69.my.id/dashboard-data/premiumClass');
+        const premiumClassResponse = await axios.get('https://mooc.code69.my.id/dashboard-data/premiumClass');
         const premiumClassData = await premiumClassResponse.json();
         setPremiumClassCount(premiumClassData.length);
 

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../admin/Nav';
+import axios from 'axios';
+
 
 
 function KelolaKelasAdmin({ Toggle }) {
@@ -12,25 +14,22 @@ function KelolaKelasAdmin({ Toggle }) {
     const fetchData = async () => {
       try {
         // Fetch data for Active Users
-        const activeUserResponse = await fetch('https://mooc.code69.my.id/dashboard-data');
-        const activeUserData = await activeUserResponse.json();
+        const activeUserResponse = await axios.get('https://mooc.code69.my.id/dashboard-data');
+        const activeUserData = await activeUserResponse.data();
         setUserCount(activeUserData.length);
 
         // Fetch data for Active Classes
-        const activeClassResponse = await fetch('https://mooc.code69.my.id/dashboard-data');
-        const activeClassData = await activeClassResponse.json();
+        const activeClassResponse = await axios.get('https://mooc.code69.my.id/dashboard-data');
+        const activeClassData = await activeClassResponse.data();
         setActiveClassCount(activeClassData.length);
 
         // Fetch data for Premium Classes
-        const premiumClassResponse = await fetch('https://mooc.code69.my.id/dashboard-data');
-        const premiumClassData = await premiumClassResponse.json();
+        const premiumClassResponse = await axios.get('https://mooc.code69.my.id/dashboard-data');
+        const premiumClassData = await premiumClassResponse.data();
         setPremiumClassCount(premiumClassData.length);
 
-        const classesResponse = await fetch ('https://mooc.code69.my.id/course', {
-            method: 'GET',
-        })
-
-        const classesData = await classesResponse.json();
+        const classesResponse = await axios.post ('https://mooc.code69.my.id/course');
+        const classesData = await classesResponse.data();
         setCourseItems(classesData);
 
       } catch (error) {
