@@ -15,22 +15,13 @@ function KelolaKelasAdmin({ Toggle }) {
       try {
         // Fetch data for Active Users
         const activeUserResponse = await axios.get('https://mooc.code69.my.id/dashboard-data');
-        const activeUserData = await activeUserResponse.data();
-        setUserCount(activeUserData.length);
+        setUserCount (activeUserResponse.data.data.activeUser)
+        setActiveClassCount (activeUserResponse.data.data.activeClass)
+        setPremiumClassCount (activeUserResponse.data.data.premiumClass)
 
-        // Fetch data for Active Classes
-        const activeClassResponse = await axios.get('https://mooc.code69.my.id/dashboard-data');
-        const activeClassData = await activeClassResponse.data();
-        setActiveClassCount(activeClassData.length);
-
-        // Fetch data for Premium Classes
-        const premiumClassResponse = await axios.get('https://mooc.code69.my.id/dashboard-data');
-        const premiumClassData = await premiumClassResponse.data();
-        setPremiumClassCount(premiumClassData.length);
-
-        const classesResponse = await axios.post ('https://mooc.code69.my.id/course');
-        setCourseItems(classesResponse);
-
+        const classesResponse = await axios.get ('https://mooc.code69.my.id/course');
+        setCourseItems(classesResponse.data.data.courseList);
+        console.log('Course Data' , classesResponse)
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -39,16 +30,13 @@ function KelolaKelasAdmin({ Toggle }) {
     fetchData();
   }, []); // Empty dependency array to run the effect only once on mount
 
-  const deleteClass = async (courseId) => {
+  const deleteClass = async (courseList) => {
     try {
-      await fetch(`https://mooc.code69.my.id/dashboard-data/course/${courseId}`, {
+      await fetch(`https://mooc.code69.my.id/course/${courseList}`, {
         method: 'DELETE',
       });
 
-      // Fetch updated data after deletion
-      const classesResponse = await fetch('https://mooc.code69.my.id/course');
-      const classesData = await classesResponse.json();
-      setCourseItems(classesData);
+      // Fetch updated data after deleti
 
     } catch (error) {
       console.error('Error deleting class:', error);
@@ -110,18 +98,18 @@ function KelolaKelasAdmin({ Toggle }) {
         <tbody>
           {Array.isArray(courseItems) &&
           courseItems.map((courseItems) => (
-            <tr key={course.id}>
-              <td>{courseItems.kodeKelas}</td>
-              <td>{courseItems.kategori}</td>
-              <td>{courseItems.namaKelas}</td>
-              <td>{courseItems.tipeKelas}</td>
-              <td>{courseItems.level}</td>
-              <td>{courseItems.hargaKelas}</td>
+            <tr key={courseItems}>
+              <td>{courseItems.courseCode}</td>
+              <td>{courseItems.courseCategory}</td>
+              <td>{courseItems.courseName}</td>
+              <td>{courseItems.typePremium}</td>
+              <td>{courseItems.courseLevel}</td>
+              <td>{courseItems.coursePrice}</td>
               <td>
                 <button className="btn btn-warning">Edit</button>
                 <button
                   className="btn btn-danger"
-                  onClick={() => deleteClass(course.id)}
+                  onClick={() => deleteClass(courseItems)}
                 >
                   Delete
                 </button>
