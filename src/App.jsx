@@ -20,6 +20,7 @@ import Dashboard from "./pages/admin/Dashboard";
 import LoginAdmin from "./pages/admin/LoginAdmin";
 import KelolaKelas from "./pages/admin/KelolaKelas";
 import ForgetPassword from "./pages/ForgetPassword";
+import RegisterAdmin from "./pages/admin/RegisterAdmin";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/login-admin" element={<LoginAdmin />} />
           <Route path="/admin/kelola-kelas" element={<KelolaKelas />} />
+          <Route path="/admin/register-admin" element={<RegisterAdmin />} />
           
     </Routes>
 

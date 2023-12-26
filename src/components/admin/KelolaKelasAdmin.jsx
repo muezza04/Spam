@@ -5,9 +5,9 @@ import axios from 'axios';
 
 
 function KelolaKelasAdmin({ Toggle }) {
-  const [userCount, setUserCount] = useState(0);
-  const [activeClassCount, setActiveClassCount] = useState(0);
-  const [premiumClassCount, setPremiumClassCount] = useState(0);
+  const [userCount, setUserCount] = useState();
+  const [activeClassCount, setActiveClassCount] = useState();
+  const [premiumClassCount, setPremiumClassCount] = useState();
   const [courseItems, setCourseItems] = useState([]);
 
   useEffect(() => {
@@ -29,8 +29,7 @@ function KelolaKelasAdmin({ Toggle }) {
         setPremiumClassCount(premiumClassData.length);
 
         const classesResponse = await axios.post ('https://mooc.code69.my.id/course');
-        const classesData = await classesResponse.data();
-        setCourseItems(classesData);
+        setCourseItems(classesResponse);
 
       } catch (error) {
         console.error('Error fetching data:', error);

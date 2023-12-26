@@ -1,31 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../admin/Nav';
-
+import axios from 'axios'
 function HomeAdmin({ Toggle }) {
-  const [userCount, setUserCount] = useState(0);
-  const [activeClassCount, setActiveClassCount] = useState(0);
-  const [premiumClassCount, setPremiumClassCount] = useState(0);
+  const [userCount, setUserCount] = useState();
+  const [activeClassCount, setActiveClassCount] = useState();
+  const [premiumClassCount, setPremiumClassCount] = useState();
   const [paymentData, setPaymentData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         // Fetch data for Active Users
-        const activeUserResponse = await axios.get('https://mooc.code69.my.id/dashboard-data/activeUser');
-        const activeUserData = await activeUserResponse.json();
-        setUserCount(activeUserData.length);
+        const activeUserResponse = await axios.get('https://mooc.code69.my.id/dashboard-data');
+        setUserCount (activeUserResponse.data.data.activeUser)
+        setActiveClassCount (activeUserResponse.data.data.activeClass)
+        setPremiumClassCount (activeUserResponse.data.data.premiumClass)
+        
+        const paymentResponse = await axios.get('https://mooc.code69.my.id/admin/payment-status')
+        setPaymentData (paymentResponse.data.paymentStatusResponse)
 
-        // Fetch data for Active Classes
-        const activeClassResponse = await axios.get('https://mooc.code69.my.id/dashboard-data/activeClass');
-        const activeClassData = await activeClassResponse.json();
-        setActiveClassCount(activeClassData.length);
-
-        // Fetch data for Premium Classes
-        const premiumClassResponse = await axios.get('https://mooc.code69.my.id/dashboard-data/premiumClass');
-        const premiumClassData = await premiumClassResponse.json();
-        setPremiumClassCount(premiumClassData.length);
-
-
+        console.log('activeUserResponse', activeUserResponse)
+        console.log('paymentResponse', paymentResponse)
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -33,7 +28,7 @@ function HomeAdmin({ Toggle }) {
 
     fetchData();
   }, []); // Empty dependency array to run the effect only once on mount
-
+  console.log('Payment Data',paymentData)
   return (
     <div className='px-3'>
       <Nav Toggle={Toggle} />
