@@ -20,26 +20,24 @@ import Riwayat from "./pages/Riwayat";
 function App() {
   return (
     <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/notif" element={<Notif />} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/notif" element={<Notif />} />
 
-          <Route path="/otp/:email" element={<Otp />}/>
-          <Route path="/akunprofil" element={<AkunProfil />}/>
-          <Route path="/ubahpw" element={<Ubahpw />}/>
-          <Route path="/riwayat" element={<Riwayat/>}/>
-    
-          <Route path="/kelas-saya" element={<KelasSaya />} />
-          <Route path="/pilih-premium" element={<PilihPremium />} />
-          <Route path="/pilih-gratis" element={<PilihGratis />} />
-          <Route path="/detail-kelas" element={<DetailKelas />} />
-          <Route path="/pembayaran" element={<Pembayaran />} />
-          <Route path="/pembayaran-sukses" element={<PembayaranSukses />} />
-          <Route path="/mulai-kelas" element={<MulaiKelas />} />
-    </Routes>
-        
+        <Route path="/otp/:email" element={<Otp />} />
+        <Route path="/akunprofil" element={<AkunProfil />} />
+        <Route path="/ubahpw" element={<Ubahpw />} />
+        <Route path="/riwayat" element={<Riwayat />} />
+
+        <Route path="/kelas-saya" element={<KelasSaya />} />
+        <Route path="/pilih-premium" element={<PilihPremium />} />
+        <Route path="/detail-kelas" element={<DetailKelas />} />
+        <Route path="/pembayaran" element={<Pembayaran />} />
+        <Route path="/pembayaran-sukses" element={<PembayaranSukses />} />
+        <Route path="/mulai-kelas" element={<MulaiKelas />} />
+      </Routes>
     </div>
   );
 }
