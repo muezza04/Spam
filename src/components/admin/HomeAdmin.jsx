@@ -68,7 +68,7 @@ function HomeAdmin({ Toggle }) {
           </div>
         </div>
       </div>
-      
+      <h2>Status Pembayaran</h2>
       <table className="table">
         <thead>
           <tr>
@@ -85,7 +85,7 @@ function HomeAdmin({ Toggle }) {
             <tr key={index}>
               <th scope="row">{payment.id}</th>
               <td>{payment.category}</td>
-              <td>{payment.premiumClass}</td>
+              <td>{payment.premiumCourse}</td>
               <td>{payment.status}</td>
               <td>{payment.paymentMethod}</td>
               <td>{payment.paymentDate}</td>

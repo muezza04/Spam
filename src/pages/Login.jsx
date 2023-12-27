@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -63,6 +64,9 @@ function Login() {
                     </div>
                     <div className='mb-3'>
                         <label htmlFor='password' className='form-label'>Password</label>
+                    <p className='forgot-password text-right'>
+                      <Link to={'/forget-password'}>Forget Password ?</Link>
+                    </p>
                         <input
                         type='password'
                         className='form-control rounded-pill'

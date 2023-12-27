@@ -82,7 +82,7 @@ function KelolaKelasAdmin({ Toggle }) {
           </div>
         </div>
       </div>
-      
+      <h2>Kelola Kelas</h2>
       <table className="table">
         <thead>
           <tr>

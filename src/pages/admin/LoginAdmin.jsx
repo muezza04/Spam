@@ -2,6 +2,44 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function LoginAdmin() {
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      let data = JSON.stringify({
+        emailAddress: email,
+        password: password,
+      });
+      let config = {
+        method: "post",
+        url: `https://mooc.code69.my.id/auth/signin`,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: data,
+      };
+
+      const response = await axios.request(config);
+      
+      const { token } = response.data;
+
+
+      localStorage.setItem("token", token);
+      console.log(token)
+      // navigate("/");
+
+      // Temporary solution
+      window.location.href = "/";
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        toast.error(error.response.data.message);
+        return;
+      }
+      toast.error(error.message);
+    }
+  };
+
   return (
     <div className='container-fluid' style={{ width: '1440px', height: '950px', top: '-987px', left: '1575px' }}>
       <div className='row align-items-center'>
@@ -13,7 +51,7 @@ function LoginAdmin() {
           />
         </div>
         <div className='col-md-6'>
-          <form style={{ width: '452px', height: '348px', top: '301px', left: '158px' }}>
+          <form style={{ width: '452px', height: '348px', top: '301px', left: '158px' }}onSubmit={onSubmit}>
             <h2>Login Admin</h2>
             <div className='mb-3'>
               <label htmlFor='username' className='form-tabel'>Username</label>

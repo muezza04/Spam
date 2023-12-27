@@ -36,9 +36,9 @@ function RegisterAdmin() {
       console.log(response.message)}
       else{console.log(response.status);
         console.log(response.message)}
-    //   const { token } = response.data.data;
+      const { token } = response.data.data;
 
-    //   localStorage.setItem("token", token);
+      localStorage.setItem("token", token);
 
       // navigate("/");
 
