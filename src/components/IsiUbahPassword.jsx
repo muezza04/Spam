@@ -1,8 +1,11 @@
 import { auto } from '@popperjs/core';
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+
 
 const IsiUbahPassword = () => {
    const styles = {
@@ -146,7 +149,53 @@ const IsiUbahPassword = () => {
       },
 
     };
+    const [oldPassword, setOldPassword] = useState("");
+    const [newPassword, setNewPassword] = useState("");
+    const [newrePassword, setNewRePassword] = useState("");
    
+    const onSubmit = async (e) => {
+      // e.preventDefault();
+  
+      try {
+        let data = { 
+          oldPassword: oldPassword,
+          newPassword: newPassword,
+          newRePassword: newrePassword,
+        };
+
+        const token = localStorage.getItem("token");
+        console.log(token)
+        let config = {
+          method: "put",
+          url: `https://mooc.code69.my.id/user/password`,
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          data: data,
+        };
+  
+        // const response = await axios.request(config);
+        
+        const response = await axios.put("https://mooc.code69.my.id/user/password",data,{headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        },})
+        console.log(response)
+  
+  
+        // navigate("/");
+  
+        // Temporary solution
+        // window.location.href = "/";
+      } catch (error) {
+        if (axios.isAxiosError(error)) {
+          toast.error(error.response.data.message);
+          return;
+        }
+        toast.error(error.message);
+      }
+    };
     return (
         <div className='row'>
             <div style={styles.mainContainer}>
@@ -188,7 +237,10 @@ const IsiUbahPassword = () => {
                                 <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
                                 <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
                                 </svg>
-                                Keluar</a>
+                                <button onClick={() => {
+                                localStorage.removeItem("token");
+                                window.location.href = "/";
+                              }}>Keluar</button></a>
                             </div>
                             </aside>
 
@@ -203,7 +255,7 @@ const IsiUbahPassword = () => {
                                         Masukkan Password Lama
                                     </label>
                                     <div className="input-group">
-                                        <input type="password" className="form-control" name="password" placeholder="********" style={styles.input}></input>
+                                        <input onChange={(e)=>setOldPassword(e.target.value)} type="password" className="form-control" name="password" placeholder="********" style={styles.input}></input>
                                     </div>                                    
                                 </div>
                                 <div>
@@ -211,7 +263,7 @@ const IsiUbahPassword = () => {
                                         Masukkan Password Baru
                                     </label>
                                     <div className="input-group">
-                                        <input type="password" className="form-control" name="password" placeholder="********" style={styles.input}></input>
+                                        <input onChange={(e)=>setNewPassword(e.target.value)}  type="password" className="form-control" name="password" placeholder="********" style={styles.input}></input>
                                     </div>                                    
                                 </div>
                                 <div>
@@ -219,13 +271,13 @@ const IsiUbahPassword = () => {
                                         Ulangi Password Baru
                                     </label>
                                     <div className="input-group">
-                                        <input type="password" className="form-control" name="password" placeholder="********" style={styles.input}></input>
+                                        <input onChange={(e)=>setNewRePassword(e.target.value)} type="password" className="form-control" name="password" placeholder="********" style={styles.input}></input>
                                     </div>                                    
                                 </div>
                                 <div >
-                                    <a href='#'><button style={styles.button} className="btn" onClick={() => console.log("Tombol ditekan")}>
+                                    <button style={styles.button} className="btn" onClick={() => onSubmit()}>
                                         Simpan
-                                    </button></a>
+                                    </button>
                                 </div>
                               </div>
 

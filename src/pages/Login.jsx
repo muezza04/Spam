@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -63,6 +64,9 @@ function Login() {
                     </div>
                     <div className='mb-3'>
                         <label htmlFor='password' className='form-label'>Password</label>
+                    <p className='forgot-password text-right'>
+                      <Link to={'/forget-password'}>Forget Password ?</Link>
+                    </p>
                         <input
                         type='password'
                         className='form-control rounded-pill'
@@ -74,7 +78,7 @@ function Login() {
                     </div>
                     <button type='submit' className='btn btn-primary rounded-pill' style={{width: '452px', height: '48px', top: '8px', left: '0px'}}>Login</button>
                     <p style={{ marginTop: '10px', textAlign: 'center'}}>Belum punya akun? <a href='/register'>Daftar di sini</a></p>
-                    <p style={{ marginTop: '10px', textAlign: 'center'}}>Belum punya akun? <a href='/register'>Daftar di sini</a></p>
+                   
                 </form>
                 
                 

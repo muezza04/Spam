@@ -16,6 +16,12 @@ import Otp from "./pages/OtpPage";
 import AkunProfil from "./pages/AkunProfil";
 import Ubahpw from "./pages/Ubahpw";
 import Riwayat from "./pages/Riwayat";
+import Dashboard from "./pages/admin/Dashboard";
+import LoginAdmin from "./pages/admin/LoginAdmin";
+import KelolaKelas from "./pages/admin/KelolaKelas";
+import ForgetPassword from "./pages/ForgetPassword";
+import RegisterAdmin from "./pages/admin/RegisterAdmin";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   return (
@@ -29,14 +35,22 @@ function App() {
         <Route path="/otp/:email" element={<Otp />} />
         <Route path="/akunprofil" element={<AkunProfil />} />
         <Route path="/ubahpw" element={<Ubahpw />} />
+        <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/riwayat" element={<Riwayat />} />
 
         <Route path="/kelas-saya" element={<KelasSaya />} />
         <Route path="/pilih-premium" element={<PilihPremium />} />
+        <Route path="/pilih-gratis" element={<PilihGratis />} />
         <Route path="/detail-kelas" element={<DetailKelas />} />
         <Route path="/pembayaran" element={<Pembayaran />} />
         <Route path="/pembayaran-sukses" element={<PembayaranSukses />} />
         <Route path="/mulai-kelas" element={<MulaiKelas />} />
+
+        <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route path="/admin/login-admin" element={<LoginAdmin />} />
+        <Route path="/admin/kelola-kelas" element={<KelolaKelas />} />
+        <Route path="/admin/register-admin" element={<RegisterAdmin />} />
       </Routes>
     </div>
   );
