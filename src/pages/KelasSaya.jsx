@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavigationBar from "../components/NavigationBar";
 import { Icon } from "@iconify/react";
 import Filter from "../components/Filter";
@@ -6,6 +6,10 @@ import Card from "react-bootstrap/Card";
 import KursusPopulerImage from "../../public/kursus-populer-image.svg";
 
 const KelasSaya = () => {
+  const [filter, setFilter] = useState("");
+  const [kategori, setKategori] = useState([]);
+  const [level, setLevel] = useState([]);
+
   return (
     <>
       <NavigationBar />
@@ -48,7 +52,7 @@ const KelasSaya = () => {
           style={{ width: "1000px", padding: "5px 0px 5px 0px" }}
         >
           <div className="filter">
-            <FilterFunction
+            <Filter
               // variabel dikiri namanya bebas,
               // variabel dikanan harus sesuai dengan nama useStatenya
               filterData={filter}
