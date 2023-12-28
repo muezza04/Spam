@@ -174,7 +174,7 @@ const NavigationBar = () => {
                     <a
                       class="dropdown-item fw-bold"
                       style={{ color: "#6148ff" }}
-                      onClick={() => navigate("/pilih-premium")}
+                      onClick={() => navigate("/topik-kelas")}
                     >
                       Topik Kelas
                     </a>
