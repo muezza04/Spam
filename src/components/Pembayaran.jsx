@@ -49,11 +49,11 @@ const Pembayaran = () => {
           <Container>
             <div className="row ms-3">
               <div className="col-md-6 mx-5">
-                <div className= "accordion" id="accordionExample">
-                  <div className= "accordion-item">
-                    <h2 className= "accordion-header">
+                <div className="accordion" id="accordionExample">
+                  <div className="accordion-item">
+                    <h2 className="accordion-header">
                       <button
-                        className= "accordion-button text-white"
+                        className="accordion-button text-white"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
@@ -66,29 +66,94 @@ const Pembayaran = () => {
                     </h2>
                     <div
                       id="collapseOne"
-                      className= "accordion-collapse collapse"
+                      className="accordion-collapse collapse"
                       data-bs-parent="#accordionExample"
                     >
-                      <div className= "accordion-body">
-                        <strong>
-                          This is the first item's accordion body.
-                        </strong>{" "}
-                        It is shown by default, until the collapse plugin adds
-                        the appropriate classes that we use to style each
-                        element. These classes control the overall appearance,
-                        as well as the showing and hiding via CSS transitions.
-                        You can modify any of this with custom CSS or overriding
-                        our default variables. It's also worth noting that just
-                        about any HTML can go within the{" "}
-                        <code>.accordion-body</code>, though the transition does
-                        limit overflow.
+                      <div className="accordion-body">
+                        <div className="d-flex gap-3 align-items-center justify-content-center">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                            <label
+                              className="form-check-label"
+                              for="flexRadioDefault1"
+                            >
+                              <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/BRI_2020.svg/1280px-BRI_2020.svg.png"
+                                height="20"
+                                width=""
+                              />
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="flexRadioDefault1"
+                            >
+                              <img
+                                src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1280px-BNI_logo.svg.png"
+                                height="20"
+                                width=""
+                              />
+                            </label>
+                          </div>
+
+                          <div class="form-check ">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="flexRadioDefault1"
+                            >
+                              <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/2560px-Bank_Central_Asia.svg.png"
+                                height="20"
+                                width=""
+                              />
+                            </label>
+                          </div>
+                          <div class="form-check ">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="flexRadioDefault1"
+                            >
+                              <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bank_Syariah_Indonesia.svg/1280px-Bank_Syariah_Indonesia.svg.png"
+                                height="20  "
+                                width=""
+                              />
+                            </label>
+                          </div>
+                        </div>
+
+                        <div></div>
                       </div>
                     </div>
                   </div>
-                  <div className= "accordion-item">
+                  <div className="accordion-item">
                     <h2 className="accordion-header ">
                       <button
-                        className= "accordion-button collapsed text-white bg-dark-blue100 mt-3"
+                        className="accordion-button collapsed text-white bg-dark-blue100 mt-3"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
@@ -100,10 +165,10 @@ const Pembayaran = () => {
                     </h2>
                     <div
                       id="collapseTwo"
-                      className= "accordion-collapse collapse show"
+                      className="accordion-collapse collapse show"
                       data-bs-parent="#accordionExample"
                     >
-                      <div className= "accordion-body align-items-center justify-content-center">
+                      <div className="accordion-body align-items-center justify-content-center">
                         <div className="payment-options gap-3 d-flex mt-3 justify-content-center">
                           <img src={MasterCard} />
                           <img src={Visa} />
@@ -118,7 +183,10 @@ const Pembayaran = () => {
                             >
                               Card Number
                             </label>
-                            <input className="form-control border border-0 text-secondary" placeholder="4488 0000 0000 0000" />
+                            <input
+                              className="form-control border border-0 text-secondary"
+                              placeholder="4488 0000 0000 0000"
+                            />
                             <hr width="300" style={{ marginTop: "-4px" }} />
                           </div>
                           <div className="card-holdername d-grid justify-content-center mt-1">
@@ -128,7 +196,10 @@ const Pembayaran = () => {
                             >
                               Card holdername
                             </label>
-                            <input className="form-control border border-0 text-secondary" placeholder="John Doe" />
+                            <input
+                              className="form-control border border-0 text-secondary"
+                              placeholder="John Doe"
+                            />
                             <hr width="300" style={{ marginTop: "-4px" }} />
                           </div>
                           <div>
@@ -140,7 +211,10 @@ const Pembayaran = () => {
                                 >
                                   CVV
                                 </label>
-                                <input className="form-control border border-0 text-secondary" placeholder="000" />
+                                <input
+                                  className="form-control border border-0 text-secondary"
+                                  placeholder="000"
+                                />
                                 <hr width="130" style={{ marginTop: "-4px" }} />
                               </div>
                               <div className="col-3  ">
@@ -150,7 +224,10 @@ const Pembayaran = () => {
                                 >
                                   Expiry Date
                                 </label>
-                                <input className="form-control border border-0 text-secondary" placeholder="07/24"/>
+                                <input
+                                  className="form-control border border-0 text-secondary"
+                                  placeholder="07/24"
+                                />
                                 <hr width="130" style={{ marginTop: "-4px" }} />
                               </div>
                             </div>

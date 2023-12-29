@@ -10,9 +10,8 @@ import Notifications from "../components/Notifikasi";
 const Notif = () => {
   return (
     <div>
-      <NavigationNotif />  
-      <Notifications/>
-     
+      <NavigationNotif />
+      <Notifications />
     </div>
   );
 };

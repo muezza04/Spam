@@ -101,6 +101,11 @@ const NavigationBar = () => {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+          {/* {isLoggedin ? (
+
+        ) : (
+
+        )} */}
           {/* <div className=" ">
             <div
               className="input-group border border-0 text-danger "
