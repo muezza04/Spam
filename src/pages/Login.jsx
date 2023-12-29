@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -97,4 +97,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Login;
